@@ -1,0 +1,49 @@
+# Metview Macro
+
+Date1 = 2020-10-01
+Date2 = 2021-04-30
+Time1 = 0
+Time2 = 0
+DiscTime= 12
+Step1 = 12
+Step2 = 30
+DiscStep = 6
+
+countENS = 1
+for TheDate = Date1 to Date2 do
+    
+    TheDateSTR = string(TheDate,"yyyymmdd")
+    
+    for TheTime = Time1 to Time2 by DiscTime do
+    
+        if TheTime = 0 then
+            TheTimeSTR = "0" & string(TheTime)
+        else
+            TheTimeSTR = string(TheTime)
+        end if
+        
+        for TheStep = Step1 to Step2 by DiscStep do
+            
+            if TheStep < 10 then
+                TheStepSTR = "00" & string(TheStep)
+            else if (TheStep >= 10 and TheStep < 100) then
+                TheStepSTR = "0" & string(TheStep)
+            else
+                TheStepSTR = string(TheStep)
+            end if
+            
+            Dir_temp = "/vol/ecpoint/mofp/PhD/Papers2Write/ecPoint_Single_WT/Data/Raw/ecPoint_Single_WT/Forecasts/SemiOper/ecPoint_Rainfall/012/ECMWF_ENS/Code1.0.0_Cal0.1.0/" & TheDateSTR & TheTimeSTR & "/Pt_BiasCorr_RainPERC"
+            File_temp = "Pt_BC_PERC_012_" & TheDateSTR & "_" & TheTimeSTR & "_" & TheStepSTR & ".grib"
+            
+            if (not exist(Dir_temp & "/" & File_temp)) then
+                
+                print("  - WARNING (" & countENS & ") ! Data not computed for " & TheDateSTR & ", " & TheTimeSTR & " UTC (t+" & TheStepSTR & ").")
+                countENS = countENS + 1
+                
+            end if
+            
+        end for
+    
+    end for
+    
+end for
