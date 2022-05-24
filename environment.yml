@@ -4,3 +4,12 @@ channels:
 dependencies:
   - metview-batch
   - metview-python
+  - os
+  - numpy
+  - numpy.polynomial.polynomial
+  - pandas
+  - datetime
+  - matplotlib
+  - scipy
+  - scipy.stats
+  - sklearn.metrics
