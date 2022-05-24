@@ -1,7 +1,7 @@
 # Metview Macro
 
 Date1 = 2020-10-01
-Date2 = 2021-04-30
+Date2 = 2021-09-30
 Time1 = 0
 Time2 = 0
 DiscTime= 12
@@ -32,7 +32,8 @@ for TheDate = Date1 to Date2 do
                 TheStepSTR = string(TheStep)
             end if
             
-            Dir_temp = "/vol/ecpoint/mofp/PhD/Papers2Write/ecPoint_Single_WT/Data/Raw/ecPoint_Single_WT/Forecasts/SemiOper/ecPoint_Rainfall/012/ECMWF_ENS/Code1.0.0_Cal0.1.0/" & TheDateSTR & TheTimeSTR & "/Pt_BiasCorr_RainPERC"
+            Dir_temp = "/vol/ecpoint/mofp/PhD/Papers2Write/ecPoint_Single_WT/Data/Raw/FC/ecPoint_Single_WT/" & TheDateSTR & TheTimeSTR
+            #Dir_temp = "/vol/ecpoint/mofp/PhD/Papers2Write/ecPoint_Single_WT/Data/Raw/ecPoint_Single_WT/Forecasts/SemiOper/ecPoint_Rainfall/012/ECMWF_ENS/Code1.0.0_Cal0.1.0/" & TheDateSTR & TheTimeSTR & "/Pt_BiasCorr_RainPERC"
             File_temp = "Pt_BC_PERC_012_" & TheDateSTR & "_" & TheTimeSTR & "_" & TheStepSTR & ".grib"
             
             if (not exist(Dir_temp & "/" & File_temp)) then

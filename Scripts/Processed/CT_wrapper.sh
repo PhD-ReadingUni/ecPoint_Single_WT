@@ -1,8 +1,8 @@
 #!/bin/bash
 
 ###############
-StepF_Start=24
-StepF_Final=54
+StepF_Start=84
+StepF_Final=126
 Step_Disc=6
 ###############
 
