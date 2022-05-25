@@ -6,7 +6,6 @@ dependencies:
   - metview-batch
   - metview-python
   - numpy
-  - pandas
   - matplotlib
   - scipy
   - scikit-learn
