@@ -1,0 +1,11 @@
+name: Metview-Python
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8
+  - metview-batch
+  - metview-python
+  - numpy
+  - matplotlib
+  - scipy
+  - scikit-learn
